@@ -63,8 +63,9 @@ fetch(val.url, {
 
 }
 const callGetAPI = (val) =>{
+    console.log("Get: ",val);
 
-    fetch(val.url)
+    fetch("https://t.justdial.com/api/india_api_write/18july2018/sendvcode.php?mobile="+phone)
     .then(response => response.json())
     .then(data => console.log(data))
     .catch((error) => {
