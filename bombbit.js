@@ -1,4 +1,4 @@
-let phone ;
+let phone ="" ;
 
 const API_LIST =[
     {
@@ -91,7 +91,7 @@ function sleep(ms) {
 }
 
 async function CallApiLoop() {
-    phone = document.getElementById('phone').val;
+    phone = document.getElementById('phone').value;
 
    if(phone.length === 10){
     while(true){
